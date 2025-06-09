@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Proje Başlangıç</title>
+</head>
+<body>
+    <h1>Merhaba, Web Projene Hoş Geldin!</h1>
+    <p>Bu sayfa GitHub Pages ile yayına alınabilir.</p>
+    <p>Aşağıdaki bağlantıdan veritabanından veri çekilecektir:</p>
+
+    <ul id="veriListesi">
+        <li>Veriler yükleniyor...</li>
+    </ul>
+
+    <script>
+        fetch('http://127.0.0.1:5000/veriler') // Flask backend'e bağlantı
+            .then(response => response.json())
+            .then(data => {
+                const liste = document.getElementById('veriListesi');
+                liste.innerHTML = ''; // "Veriler yükleniyor..." mesajını temizle
+
+                data.forEach(item => {
+                    const li = document.createElement('li');
+                    li.textContent = `${item.ad} - ${item.yas}`;
+                    liste.appendChild(li);
+                });
+            })
+            .catch(error => {
+                document.getElementById('veriListesi').innerHTML = '<li>Veri alınamadı</li>';
+                console.error('Hata:', error);
+            });
+    </script>
+</body>
+</html>
