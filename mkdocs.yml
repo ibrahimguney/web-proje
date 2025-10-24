@@ -1,0 +1,8 @@
+site_name: Öğretici Paket
+repo_url: https://github.com/ibrahimguney/web-proje
+theme:
+  name: material
+nav:
+  - Ana Sayfa: index.md
+  - Kurulum: installation.md
+  - Kullanım: usage.md
