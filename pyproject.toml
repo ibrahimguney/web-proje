@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tutorial-package-izustyle"
+version = "0.1.0"
+description = "Öğretici amaçlı minimal Python paketi ve dokümantasyon şablonu"
+authors = [{name="Ibrahim Guney"}]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ibrahimguney"
+Documentation = "https://your-pages-url"
+Repository = "https://github.com/ibrahimguney/web-proje"
